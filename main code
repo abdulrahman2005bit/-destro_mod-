@@ -1,0 +1,32 @@
+from math import sqrt, ceil
+
+print("enter the values you want, to calculate any value press inter")
+AB = input("AB: ")
+BC = input("BC: ")
+CA = input("CA: ")
+try:
+    if CA == "":
+        CA1 = sqrt((int(AB) ** 2) + (int(BC) ** 2))
+        CA2 = ceil(sqrt((int(AB) ** 2) + (int(BC) ** 2)))
+        CA3 = f"{CA1} _-_ {CA2}"
+        print(CA3)
+    elif BC == "":
+        if int(CA) < int(AB):
+            print("impossible to happen" + " CA < AB so the value will be negative, and there are no negative angle")
+        else:
+            BC1 = sqrt((int(CA) ** 2) - (int(AB) ** 2))
+            BC2 = ceil(sqrt((int(CA) ** 2) - (int(AB) ** 2)))
+            BC3 = f"{BC1} _-_ {BC2}"
+            print(BC3)
+    elif AB == "":
+        if int(CA) < int(BC):
+            print("impossible to happen" + " CA < BC so the value will be negative, and there are no negative angle")
+        else:
+            AB1 = sqrt((int(CA) ** 2) - (int(BC) ** 2))
+            AB2 = ceil(sqrt((int(CA) ** 2) - (int(BC) ** 2)))
+            AB3 = f"{AB1} _-_ {AB2}"
+            print(AB3)
+    else:
+        print("ERROR")
+except ZeroDivisionError:
+    print("no division by zero")
